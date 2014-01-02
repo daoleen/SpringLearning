@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringHibernate/SpringHibernate.iml" filepath="$PROJECT_DIR$/SpringHibernate/SpringHibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringJdbc/SpringJdbc.iml" filepath="$PROJECT_DIR$/SpringJdbc/SpringJdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringJpa/SpringJpa.iml" filepath="$PROJECT_DIR$/SpringJpa/SpringJpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTransaction/SpringTransaction.iml" filepath="$PROJECT_DIR$/SpringTransaction/SpringTransaction.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.1.70-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.28 ( Revision: alexander.soklakov@oracle.com-20131125092425-yvejy3xvci77ru3k )" uuid="6b5cc804-fec1-46db-b899-3cf035f5ec14">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <synchronize>true</synchronize>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost:3306/SpringLearning_SpringJdbc</jdbc-url>
+    <user-name>root</user-name>
+    <schema-pattern>SpringLearning_SpringJdbc.*</schema-pattern>
+    <default-dialect>MySQL</default-dialect>
+    <libraries>
+      <library>
+        <url>jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.28/mysql-connector-java-5.1.28.jar!/</url>
+      </library>
+    </libraries>
+    <schema name="" catalog="SpringLearning_SpringJdbc"/>
+    <table name="Group" schema="" catalog="SpringLearning_SpringJdbc" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UQ_NAME" unique="true" columns="name"/>
+    </table>
+    <table name="Student" schema="" catalog="SpringLearning_SpringJdbc" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="group_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="first_name" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="FLOAT" length="5" precision="2" nullable="true" jdbcType="7" def="MTguMjA="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UQ_NAME" unique="true" columns="first_name,last_name"/>
+      <index name="FK_GROUP" unique="false" columns="group_id"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2627302795">
+    <data-source source="LOCAL" name="Data Source" uuid="6b5cc804-fec1-46db-b899-3cf035f5ec14">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/SpringLearning_SpringJdbc</jdbc-url>
+      <user-name>root</user-name>
+      <schema-pattern>SpringLearning_SpringJdbc.*</schema-pattern>
+      <default-dialect>MySQL</default-dialect>
+      <libraries>
+        <library>
+          <url>jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.28/mysql-connector-java-5.1.28.jar!/</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
