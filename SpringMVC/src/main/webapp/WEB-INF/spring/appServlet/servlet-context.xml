@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <mvc:annotation-driven />
+
+    <mvc:resources mapping="/resources/**" location="WEB-INF/web-resources/" />
+
+    <mvc:default-servlet-handler />
+
+    <!-- Этот бин удалить для включения Apache Tiles -->
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/views/" />-->
+        <!--<property name="suffix" value=".jspx" />-->
+    <!--</bean>-->
+
+    <context:component-scan base-package="com.daoleen.springlearning.mvc.controller" />
+
+    <!-- Перехватчики для тем, локалей и пр. -->
+    <mvc:interceptors>
+        <!-- Перехватчик для отслеживания изменения локали -->
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+              p:paramName="lang" />
+
+        <!-- Перехватчик для отслеживания изменения темы -->
+        <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor" />
+    </mvc:interceptors>
+
+    <!-- Определение местонахождения файлов локализации -->
+    <bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+          id="messageSource"
+          p:basenames="WEB-INF/i18n/messages, WEB-INF/i18n/application"
+          p:fallbackToSystemLocale="false" />
+
+    <!-- Указание места хранения юзер-локали: в куках -->
+    <bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver"
+          id="localeResolver" p:cookieName="locale"
+          p:cookieMaxAge="1209600" />  <!-- 14 дней, в секундах -->
+
+
+    <!-- Опеределяем ресурсы для темы -->
+    <bean class="org.springframework.ui.context.support.ResourceBundleThemeSource"
+          id="themeSource" />
+
+    <!-- Указание, что тема будет храниться в куках -->
+    <bean class="org.springframework.web.servlet.theme.CookieThemeResolver"
+          id="themeResolver" p:cookieName="theme" p:defaultThemeName="standard" />
+
+
+
+    <!-- Конфигурация Apache Tiles -->
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+          id="tilesViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+    </bean>
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" id="tilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>WEB-INF/layouts/layouts.xml</value>
+                <!-- Сканирование views директорий для поиска Tiles конфигураций -->
+                <value>WEB-INF/views/**/views.xml</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

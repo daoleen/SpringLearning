@@ -25,6 +25,7 @@
         <module name="SpringHibernate" />
         <module name="SpringJdbc" />
         <module name="SpringJpa" />
+        <module name="SpringMVC" />
         <module name="SpringTransaction" />
       </profile>
     </annotationProcessing>

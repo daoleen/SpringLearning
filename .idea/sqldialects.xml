@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/SpringHibernate/src/main/resources/schema.sql" dialect="H2" />
     <file url="file://$PROJECT_DIR$/SpringJdbc/src/main/resources/insert.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/SpringJdbc/src/main/resources/schema.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/SpringMVC/src/main/resources/article-data.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/SpringMVC/src/main/resources/article-schema.sql" dialect="H2" />
   </component>
 </project>
 

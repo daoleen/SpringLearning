@@ -1,0 +1,26 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: alex
+  Date: 1/3/14
+  Time: 10:04 AM
+  To change this template use File | Settings | File Templates.
+-->
+<div id="menu" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:spring="http://www.springframework.org/tags">
+    <jsp:output omit-xml-declaration="true" />
+    <spring:url value="/" var="homeUrl" />
+    <strong>Menu</strong><br />
+    <ul>
+        <li>
+            <a href="${homeUrl}"><spring:message code="label_home_link" /></a>
+        </li>
+        <li>
+            <a href="?lang=en_US">EN</a>
+            <a href="?lang=ru_RU">RU</a>
+        </li>
+        <li>
+            <a href="?theme=standard"><spring:message code="standard_theme" /></a><br />
+            <a href="?theme=yellow"><spring:message code="yellow_theme" /></a>
+        </li>
+    </ul>
+</div>

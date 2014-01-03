@@ -1,0 +1,11 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: alex
+  Date: 1/3/14
+  Time: 10:02 AM
+  To change this template use File | Settings | File Templates.
+-->
+<div id="header" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml">
+    <jsp:output omit-xml-declaration="true" />
+    This is a header!
+</div>
