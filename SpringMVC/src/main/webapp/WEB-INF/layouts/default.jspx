@@ -34,7 +34,14 @@
         <!--<spring:url value="${main_css}" var="main_css_url" />-->
         <link rel="stylesheet" type="text/css" media="screen" href="${main_css}" />
         <link rel="stylesheet" type="text/css" media="screen" href="${list_css}" />
-        <script type="text/javascript" src="${list_js}">;</script>
+        <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/jquery-ui.min.css" />
+
+        <script type="text/javascript" src="${list_js}"><jsp:text/></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"><jsp:text/></script>
+        <script type="text/javascript" src="/resources/js/jquery-ui.min.js"><jsp:text></jsp:text></script>
+
+        <!-- MyIdea: определение глобального URLа запроса для home-directory -->
+        <spring:url value="/" var="homeUrl" scope="application" />
 
         <!--
             Извлечение пользовательской локали из контекста страницы
@@ -46,6 +53,11 @@
         </c:set>
     </head>
     <body>
+        <c:if test="${not empty system_notice}">
+            <div id="system-notice">
+                ${system_notice}
+            </div>
+        </c:if>
         <table>
             <tr>
                 <td colspan="2">

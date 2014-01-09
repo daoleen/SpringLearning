@@ -18,19 +18,24 @@
             <th>description</th>
             <th>created_at</th>
             <th>logo</th>
+            <th><jsp:text/></th>
+            <th><jsp:text/></th>
         </thead>
         <c:if test="${not empty articles}">
             <c:forEach items="${articles}" var="article">
                 <tbody>
                     <td>${article.id}</td>
-                    <td class="red">${article.name}</td>
+                    <td class="red"><a href="${urlHome}/articles/${article.id}">${article.name}</a></td>
                     <td>${article.description}</td>
                     <td class="green"><joda:format value="${article.created_at}" pattern="dd.MM.YYYY HH:mm:ss" /></td>
                     <td>${article.logo}</td>
+                    <td><a href="${urlHome}/articles/${article.id}?form"><spring:message code="label_article_edit_link" /></a></td>
+                    <td><jsp:text/></td>
                 </tbody>
             </c:forEach>
         </c:if>
     </table>
     <br />
-    <img src="/resources/images/tomcat.gif" />
+    <img src="/resources/images/tomcat.gif" /> <a href="/articles?form">create new</a>  <br />
+    <a href="/articles/pageable">By Pages</a>
 </div>

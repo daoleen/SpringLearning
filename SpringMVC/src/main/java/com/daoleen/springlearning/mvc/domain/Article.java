@@ -22,13 +22,13 @@ public class Article implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Size(min = 3, max = 255)
+    @NotNull(message = "{validation.name.NotNull.message}")
+    @Size(min = 3, max = 255, message = "{validation.name.Size.message}")
     @Column(name = "name", length = 255)
     private String name;
 
-    @NotNull
-    @Size(min = 5, max = 4000)
+    @NotNull(message = "{validation.description.NotNull.message}")
+    @Size(min = 5, max = 4000, message = "{validation.description.Size.message}")
     @Column(name = "description", length = 4000)
     private String description;
 
@@ -39,7 +39,7 @@ public class Article implements Serializable {
     @Column(name = "created_at")
     private LocalDateTime created_at;
 
-    @Size(max = 255)
+    @Size(max = 255, message = "{validation.logo.Size.message}")
     @Column(name = "logo", length = 255)
     private String logo;
 

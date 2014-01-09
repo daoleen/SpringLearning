@@ -6,6 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven />
+    <!-- validator-подключает в проект валидацию. в качестве параметра указывается bean-валидатор -->
+    <!--<mvc:annotation-driven validator="validator" />-->
+    <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+        <!--&lt;!&ndash; Указание MessageSource для интернационализации сообщений об ошибках валидации &ndash;&gt;-->
+        <!--<property name="validationMessageSource" ref="messageSource" />-->
+    <!--</bean>-->
 
     <mvc:resources mapping="/resources/**" location="WEB-INF/web-resources/" />
 
@@ -66,4 +72,7 @@
         </property>
     </bean>
 
+
+    <!-- Поддержка загрузки файлов на сервер -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 </beans>

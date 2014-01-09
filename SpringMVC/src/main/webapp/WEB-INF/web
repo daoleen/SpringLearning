@@ -83,6 +83,11 @@
             <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+
+        <!-- Для включения загрузки файлов -->
+        <multipart-config>
+            <max-file-size>5242880</max-file-size> <!-- Макс. размер - 5Mb -->
+        </multipart-config>
     </servlet>
     
     <servlet-mapping>

@@ -1,0 +1,94 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: alex
+  Date: 1/4/14
+  Time: 1:49 AM
+  To change this template use File | Settings | File Templates.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+          xmlns:spring="http://www.springframework.org/tags" xmlns:form="http://www.springframework.org/tags/form">
+
+    <!-- jQueryUI календарик) -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#created_at').datepicker({
+                dateFormat: 'dd-mm-yy',
+                changeYear: true
+            });
+        });
+    </script>
+
+
+    <!-- Здесь конечно же лучше по феншую локализировать строки:) -->
+    <spring:message text="Создание статьи" var="lblNew" />
+    <spring:message text="Редактирование статьи" var="lblEdit" />
+
+    <!-- Используется язык SpEL, похоже на скриплет -->
+    <spring:eval var="title"
+                 expression="article.id == null ? lblNew : lblEdit" />
+
+    <h2>${title}</h2>
+
+    <form:form modelAttribute="article" id="articleForm" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td> <!-- аналогично нужно все это дело выдирать из локали, но влом)) -->
+                    <form:label path="name">Название статьи</form:label>
+                </td>
+                <td>
+                    <form:input path="name" />
+                </td>
+                <td>
+                    <form:errors path="name" cssClass="error" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="description">Описание</form:label>
+                </td>
+                <td>
+                    <form:textarea path="description" cssClass="article_description_input" cols="30" rows="5" />
+                </td>
+                <td>
+                    <form:errors path="description" cssClass="error" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="created_at">Дата создания</form:label>
+                </td>
+                <td>
+                    <form:input path="created_at" id="created_at" />
+                </td>
+                <td>
+                    <form:errors path="created_at" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="logo">Логотип</form:label>
+                </td>
+                <td>
+                    <input type="file" name="fileLogo" />
+                </td>
+                <td>
+                    <form:errors path="logo" cssClass="error" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <!-- Применяются эффекты jQueryUI-css для кнопок -->
+                    <button type="submit"
+                            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                        <span class="ui-button-text">Сохранить</span>
+                    </button>
+                    <button type="reset"
+                            class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+                        <span class="ui-button-text">Сбросить</span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form:form>
+
+</jsp:root>

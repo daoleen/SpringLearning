@@ -1,3 +1,10 @@
 .red {
     color: #FF0000;
 }
+
+#system-notice {
+    width: 350px;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid #FF0000;
+}

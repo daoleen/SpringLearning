@@ -63,6 +63,7 @@
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-request-servlet:1.0.3" />
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-servlet:3.0.3" />
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-template:3.0.3" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

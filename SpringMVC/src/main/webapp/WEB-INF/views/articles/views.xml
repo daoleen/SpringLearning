@@ -7,4 +7,13 @@
     <definition extends="default" name="articles/list">
         <put-attribute name="body" value="/WEB-INF/views/articles/list.jspx" />
     </definition>
+    <definition extends="default" name="articles/show">
+        <put-attribute name="body" value="/WEB-INF/views/articles/show.jspx" />
+    </definition>
+    <definition extends="default" name="articles/form">
+        <put-attribute name="body" value="/WEB-INF/views/articles/form.jspx" />
+    </definition>
+    <definition extends="default" name="articles/articlesByPages">
+        <put-attribute name="body" value="/WEB-INF/views/articles/articlesByPages.jspx" />
+    </definition>
 </tiles-definitions>
